@@ -1,5 +1,5 @@
 {% set name = "bmad-method" %}
-{% set version = "6.2.2" %}
+{% set version = "6.3.0" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://registry.npmjs.org/{{ name }}/-/{{ name }}-{{ version }}.tgz
-  sha256: 4caa8838a7ee628fa12b82e7c6d6ea64e6d0e0ef66d601d23a8877393869fbde
+  sha256: 159539459e6e6c9a2e486e96b3b35614b265f9654c9d7516eeea55efbc97cbb8
 
 build:
-  number: 1
+  number: 0
   noarch: generic
   # Prevent nodejs run_exports from pinning to a specific major version;
   # pure-JS packages work with any nodejs >=20.
