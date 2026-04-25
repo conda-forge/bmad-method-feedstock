@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: bmad-method
-  version: "6.3.0"
+  version: "6.4.0"
 
 package:
   name: ${{ name }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/bmad-code-org/BMAD-METHOD/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: daea1421634f43c319c7e78b7d4932579371db674d3c6f9da2865733826c1536
+  sha256: 8b4019c1c80880f10e7c7af54b5d60b6dd172a52468ebd008fe95fd46b80e3da
 
 build:
   number: 0
@@ -34,11 +34,9 @@ tests:
         then:
           - bmad --help
           - bmad-method --help
-      - if: win
-        then:
+        else:
           - bmad.bat --help
           - bmad-method.bat --help
-
 about:
   homepage: https://github.com/bmad-code-org/BMAD-METHOD
   license: MIT
