@@ -201,6 +201,3 @@ Feedstock Maintainers
 * [@killua156](https://github.com/killua156/)
 * [@rxm7706](https://github.com/rxm7706/)
 
-
-<!-- dummy commit to enable rerendering -->
-
