@@ -13,7 +13,7 @@ source:
   sha256: 605eef63bbc6e0132e56363b10504d93a09657ae1df22a8c2741c6c5882ecf44
 
 build:
-  number: 0
+  number: 1
   noarch: generic
 
 requirements:
@@ -21,6 +21,9 @@ requirements:
     - nodejs 20.*
   run:
     - nodejs >=20
+    # The installer requires uv to run the Python scripts the skills call
+    # via `uv run`. Floor it so an unpinned solve can't backtrack to an old uv.
+    - uv >=0.13.4
     - if: unix
       then:
         - __unix
@@ -34,9 +37,11 @@ tests:
         then:
           - bmad --help
           - bmad-method --help
+          - uv --version
         else:
           - bmad.bat --help
           - bmad-method.bat --help
+          - uv --version
 about:
   homepage: https://github.com/bmad-code-org/BMAD-METHOD
   license: MIT
